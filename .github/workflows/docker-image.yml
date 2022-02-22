@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build images
+      run: make build
+
+    - name: Run tests
+      run: make test
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag challenge:$(date +%s)
+      run: docker build . --target prod --tag challenge:$(date +%s)
