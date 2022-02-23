@@ -12,8 +12,8 @@ from src.intervals import Interval, merge
     "input, expected",
     [
         (
-            [[0,10]],
-            [[0,10]],
+            [[0, 10]],
+            [[0, 10]],
         ),
         (
             [[25, 30], [2, 19], [14, 23], [4, 8]],
@@ -33,4 +33,3 @@ def test_merge(input: list[list[int]], expected: list[list[int]]) -> None:
 
 def test_empty() -> None:
     assert merge([]) == []
-
